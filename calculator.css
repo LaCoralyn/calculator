@@ -1,9 +1,9 @@
 body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #CBCE91FF, #EA738DFF)
+    background: linear-gradient(to right, rgb(83, 126, 206), #EA738DFF)
 }
-.calc{
+.calc {
     display: grid;
     justify-content: center;
    align-content: center;
@@ -24,18 +24,17 @@ button{
 .calc > button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px, solid #FFFFFF;
+    border: 1px solid white;
     outline: none;
     background-color: rbga(255, 255, 255, 0.75);
   }
 
     .calc > button:hover {
       background-color: #a9a9a9;
+      background-color: rbga(255, 255, 255, 0.9)
     }
-    .clear {
+    .span-2 {
         grid-column: span 2;
-        color: #adf802;
-        background-color: rgba(139, 0, 139, 0.8);
       }
       .display{
         grid-column: 1 / -1;
@@ -48,8 +47,8 @@ button{
         word-wrap: break-word;
         word-break: break-all;
       }
-      .dislpay .previous-operand{
-        color: rgba(255,255, 255, 0.75);
+      .previous-operand{
+        color: rgba(255,255,255,.75);
         font-size: 1.5rem;
       }
 
