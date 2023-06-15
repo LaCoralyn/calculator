@@ -5,11 +5,12 @@ class Calculator{
         this.clear()
     }
 
-clear(){
+  clear(){
     this.currentOperand = ''
     this.previousOperand = ''
     this.operation = undefined}
-appendNumber(number) {
+
+  appendNumber(number) {
     if(number ==='.' && this.currentOperand.includes('.'))return;
     this.currentOperand = this.currentOperand.toString() + number.toString()
 }
@@ -63,6 +64,10 @@ compute(){
             break
             default: return
     }
+    this.currentOperand = computation
+    this.operation = undefined
+    this.previousOperand = ''
+
 
 }
 
@@ -80,8 +85,8 @@ updateDisplay() {
 const numbers = document.querySelectorAll('[data-number]');
 const operBttns= document.querySelectorAll('[data-operation]');
 const allClearBttn= document.querySelector('[data-clear]');
-const deleteBttn= document.querySelector('[data-delete]');
-const equalBttn= document.querySelector('[data-equal]');
+const deleteBttn= document.querySelector('.delete');
+const equalBttn= document.querySelector('[data-equals]');
 const previousOperandText= document.querySelector('[data-previousO]');
 const currentOperandText= document.querySelector('[data-currentO]');
 const calculator = new Calculator(previousOperandText, currentOperandText)
@@ -97,15 +102,19 @@ operBttns.forEach(button =>{
         calculator.updateDisplay()
     })
 })
-equalBttn.addEventListener('click', button =>{
-    calculator.compute()
-    calculator.updateDisplay()
-})
-allClearBttn.addEventListener('click', button =>{
-    calculator.clear()
-    calculator.updateDisplay()
-})
-deleteBttn.addEventListener('click', button =>{
-    calculator.delete()
-    calculator.updateDisplay()
-})
+equalBttn.addEventListener('click', button => {
+      calculator.compute()
+      calculator.updateDisplay()
+    })
+
+  allClearBttn.addEventListener('click', button => {
+      calculator.clear()
+      calculator.updateDisplay()
+    })
+
+  deleteBttn.addEventListener('click', button => {
+      calculator.delete()
+      calculator.updateDisplay()
+    })
+
+
