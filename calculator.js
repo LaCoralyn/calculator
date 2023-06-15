@@ -85,7 +85,7 @@ updateDisplay() {
 const numbers = document.querySelectorAll('[data-number]');
 const operBttns= document.querySelectorAll('[data-operation]');
 const allClearBttn= document.querySelector('[data-clear]');
-const deleteBttn= document.querySelector('.delete');
+const deleteBttn= document.querySelector('[data-delete');
 const equalBttn= document.querySelector('[data-equals]');
 const previousOperandText= document.querySelector('[data-previousO]');
 const currentOperandText= document.querySelector('[data-currentO]');
